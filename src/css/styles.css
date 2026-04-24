@@ -1,7 +1,6 @@
 /**
   |============================
-  | include css partials with
-  | default @import url()
+  | include css partials
   |============================
 */
 /* Common styles */
@@ -12,7 +11,134 @@
 
 /* Sections style */
 @import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
 @import url('./footer.css');
+
+/* --- HW-11 Görsel Arama Özel Stilleri --- */
+
+.search-section {
+  padding: 36px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form ve Input Tasarımı */
+.search-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.search-form input {
+  width: 272px;
+  height: 40px;
+  padding: 8px 16px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+  transition: border-color 250ms ease;
+}
+
+.search-form input:hover {
+  border-color: #000;
+}
+
+.search-form input:focus {
+  border-color: #4e75ff;
+}
+
+.search-form button {
+  padding: 8px 20px;
+  background-color: #4e75ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 250ms ease;
+}
+
+.search-form button:hover {
+  background-color: #6c8cff;
+}
+
+/* Galeri Grid Yapısı */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-item {
+  width: 360px;
+  border: 1px solid #808080;
+  background: #fff;
+  transition: transform 250ms ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-item {
+  width: 360px;
+  border: 1px solid #808080;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden; /* Taşmaları engellemek için */
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 15px;
+}
+
+.info-item {
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: #2e2f42;
+  font-weight: 400;
+}
+
+.info-item b {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.loader-container {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #f3f3f3;
+  border-bottom-color: #4e75ff;
+  border-radius: 50%;
+  display: none;
+  margin: 0 auto;
+  animation: rotation 1s linear infinite;
+}
+
+.loader.is-visible {
+  display: block;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
